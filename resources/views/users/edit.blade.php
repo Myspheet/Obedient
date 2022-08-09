@@ -66,20 +66,20 @@
                 <div class="select-input">
                     <select class="select-op" name="state" id="state">
                         <option value="">State</option>
-                        <option value=Delta">Delta</option>
+                        <option value="Delta">Delta</option>
                         <option value="Edo">Edo</option>
-                        <option value="#">Lagos</option>
-                        <option value="#">Ekiti</option>
+                        <option value="Lagos">Lagos</option>
+                        <option value="Ekiti">Ekiti</option>
                     </select>
                     @error('state')
                         <p class="error">{{ $message }}</p>
                     @enderror
                     <select class="select-op" name="lga" id="lga">
                         <option value="">LGA</option>
-                        <option value="Delta">Delta</option>
-                        <option value="Edo">Edo</option>
-                        <option value="#">Lagos</option>
-                        <option value="#">Ekiti</option>
+                        <option value="Ugheli North">Ugheli North</option>
+                        <option value="Sapele">Sapele</option>
+                        <option value="Oshimili South">Oshimili South</option>
+                        <option value="Mosogar">Mosogar</option>
                     </select>
                     @error('lga')
                         <p class="error">{{ $message }}</p>
@@ -88,20 +88,20 @@
                 <div class="select-input">
                     <select class="select-op" name="ward" id="ward">
                         <option value="">Ward</option>
-                        <option value="jsdj">Delta</option>
-                        <option value="sdhhsd">Edo</option>
-                        <option value="sjdjsd">Lagos</option>
-                        <option value="#">Ekiti</option>
+                        <option value="Ward 25">Ward 25</option>
+                        <option value="Ward 30">Ward 30</option>
+                        <option value="Ward 50">Ward 50</option>
+                        <option value="Ward 70">Ward 70</option>
                     </select>
                     @error('ward')
                         <p class="error">{{ $message }}</p>
                     @enderror
                     <select class="select-op" name="pollingUnit" id="pollingUnit">
                         <option value="">Polling Unit</option>
-                        <option value="jsdj">Delta</option>
-                        <option value="ksdk">Edo</option>
-                        <option value="jsdj">Lagos</option>
-                        <option value="jsdj">Ekiti</option>
+                        <option value="Nysc Seceteriat">Nysc Seceteriat</option>
+                        <option value="Obule School">Obule School</option>
+                        <option value="His Majesty">His Majesty</option>
+                        <option value="Ogodo primary school">Ogodo primary school</option>
                     </select>
                     @error('pollingUnit')
                         <p class="error">{{ $message }}</p>
