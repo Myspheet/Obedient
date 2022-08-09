@@ -20,22 +20,34 @@
                 @csrf
                 <img src="{{ asset('img/avatar.svg') }}">
                 <h2 class="title">Welcome</h2>
+                @error('fail')
+                    <p class="error-m">{{ $message }}</p>
+                @enderror
                 <div class="input-div one">
                     <div class="i">
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="div">
-                        <input type="email" placeholder="Email" name="email" class="input">
+                        <input type="email" placeholder="Email" name="email" class="input"
+                            value="{{ old('email') }}">
                     </div>
                 </div>
+                @error('email')
+                    <p class="error">{{ $message }}</p>
+                @enderror
+
                 <div class="input-div pass">
                     <div class="i">
                         <i class="fas fa-lock"></i>
                     </div>
                     <div class="div">
-                        <input type="password" name="password" placeholder="Password" class="input">
+                        <input type="password" name="password" placeholder="Password" class="input"
+                            value="{{ old('password') }}">
                     </div>
                 </div>
+                @error('password')
+                    <p class="error">{{ $message }}</p>
+                @enderror
                 <a class="ancr" href="/register">Sign Up</a>
                 <input type="submit" class="btn" value="Login">
             </form>

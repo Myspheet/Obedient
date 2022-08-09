@@ -91,6 +91,19 @@ input::placeholder {
     font-weight: 500;
 }
 
+.error {
+    color: red;
+    font-size: 0.7rem;
+    margin-top: -1rem;
+    text-align: left;
+}
+.error-m {
+    color: red;
+    font-size: 1rem;
+    margin-top: 1rem;
+    text-align: left;
+}
+
 .input-div > div > h5 {
     position: absolute;
     left: 10px;
@@ -249,10 +262,10 @@ a:hover {
     width: 100%;
     background-color: #f0f0f0;
     margin: 10px 0;
-    height: 55px;
+    height: 3rem;
     border-color: #f0f0f0;
     outline: none;
-    border-radius: 55px;
+    border-radius: 1rem;
     display: grid;
     grid-template-columns: 15% 85%;
     padding: 0 10px;
@@ -261,6 +274,7 @@ a:hover {
     font-weight: 500;
     font-size: 1.1rem;
     cursor: pointer;
+    margin-bottom: 1.1rem;
 }
 
 .select-op * {
@@ -278,6 +292,13 @@ a:hover {
     display: flex;
     gap: 3rem;
     justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .checkBox > div {

@@ -25,10 +25,10 @@ class UserController extends Controller
             'name' => ['required', 'min:3'],
             'number' => ['required', 'min:10'],
             'state' => ['required', 'min:3'],
-            'lga' => ['required', 'min:3'],
-            'ward' => ['required', 'min:3'],
-            'pollingUnit' => ['required', 'min:3'],
-            'rank' => ['required', 'min:3'],
+            'lga' => ['required'],
+            'ward' => ['required'],
+            'pollingUnit' => ['required'],
+            'rank' => ['required'],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
             'password' => 'required|min:6'
         ]);
@@ -66,6 +66,6 @@ class UserController extends Controller
             return redirect('/');
         }
 
-        return back()->withErrors(['email' => 'Invalid Crdentials'])->onlyInput('email');
+        return back()->withErrors(['fail' => 'Wrong Email and Password'])->onlyInput('email');
     }
 }

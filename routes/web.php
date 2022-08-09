@@ -20,7 +20,7 @@ Route::get('/', function () {
 })->middleware('auth');
 
 // Show sign up form
-Route::get('/register', [UserController::class, 'create'])->name('login')->middleware('guest');
+Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
 // Register User
 Route::post('/users', [UserController::class, 'store'])->middleware('guest');
