@@ -17,6 +17,43 @@ class UserController extends Controller
         return view('users.register');
     }
 
+    public function show(User $user)
+    {
+
+        $user = auth()->user();
+        return view('users.show', [       // Route Model Binding
+            'user' =>  $user
+        ]);
+    }
+
+    public function edit()
+    {
+        $user = auth()->user();
+        return view('users.edit', [
+            'user' =>  $user
+        ]);
+    }
+
+    public function update(Request $request, User $user)
+    {
+        $formFields = $request->validate([
+            'name' => ['required', 'min:3'],
+            'number' => ['required', 'min:10'],
+            'state' => ['required', 'min:3'],
+            'lga' => ['required'],
+            'ward' => ['required'],
+            'pollingUnit' => ['required'],
+            'rank' => ['required'],
+            'email' => ['required', 'email'],
+        ]);
+
+
+        $user->update($formFields);
+        return redirect('/profile');
+    }
+
+
+
     // Storing user details
     public function store(Request $request)
     {

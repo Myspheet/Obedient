@@ -16,8 +16,18 @@ use App\Http\Controllers\UserController;
 
 // home page view
 Route::get('/', function () {
-    return view('index');
+    $user = auth()->user();
+    return view('index', ['user' => $user]);
 })->middleware('auth');
+
+// profile page for logged in user
+Route::get('/profile', [UserController::class, 'show'])->middleware('auth');
+
+// show edit form
+Route::get('/profile/edit', [UserController::class, 'edit'])->middleware('auth');
+
+//Update user details
+Route::put('/profile/{user}', [UserController::class, 'update'])->middleware('auth');
 
 // Show sign up form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
